@@ -3,6 +3,7 @@ import { Callout, Closing, Facts, FileCard, Route, Routes } from '@instinct/file
 import heroBanner from './photos/hero-banner.jpg';
 import brandAp from './photos/brand-ap.jpg';
 import brandJsw from './photos/brand-jsw.jpg';
+import puPalette from './photos/pu-palette.jpg';
 
 const whatsapp = 'https://wa.me/919746334755';
 
@@ -14,8 +15,8 @@ function PhotoSlot({ label, dark }: { label: string; dark?: boolean }) {
 }
 
 const stock = [
-    { img: brandAp, dot: '#e36d42', name: 'Asian Paints', detail: 'Interior and exterior emulsions, enamels, primers and distempers' },
-    { img: brandJsw, dot: '#c0392b', name: 'JSW Paints', detail: 'Emulsions, enamels and wood finishes' },
+    { img: brandAp, dot: '#e36d42', name: 'Asian Paints', dealer: true, detail: 'Interior and exterior emulsions, enamels, primers and distempers' },
+    { img: brandJsw, dot: '#c0392b', name: 'JSW Paints', dealer: true, detail: 'Emulsions, enamels and wood finishes' },
     { dot: '#d8b76a', name: 'Painting supplies', detail: 'Brushes, rollers, thinners, wall putty, sandpaper and masking tape' },
     { dot: '#73a89a', name: 'Colour mixing', detail: 'Shade-card advice and colour mixing in the shop' },
 ];
@@ -89,10 +90,20 @@ function Home() {
                             : <span className="stock-dot" style={{ background: item.dot }} />}
                         <div>
                             <strong>{item.name}</strong>
+                            {item.dealer && <span className="dealer-chip">Main dealer</span>}
                             <span className="stock-detail">{item.detail}</span>
                         </div>
                     </div>
                 ))}
+            </div>
+        </section>
+
+        <section className="feature">
+            <img src={puPalette} alt="Glossy PU wood finish on a tabletop and cabinet door" className="feature-img" />
+            <div className="feature-body">
+                <span className="feature-chip">Only at select shops</span>
+                <h3 className="feature-title">Asian Paints PU Palette, available here</h3>
+                <p className="feature-text">Premium polyurethane wood finishes - deep gloss, tough and long-lasting, for interior and exterior wood. Not every paint shop stocks the PU Palette range. We do.</p>
             </div>
         </section>
 
