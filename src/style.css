@@ -3,7 +3,9 @@
 .hero {
     margin: -24px -24px 28px;
     padding: 36px 24px 32px;
-    background: linear-gradient(140deg, #0c3b38 0%, #11554f 55%, #1c4e79 100%);
+    background-color: #0c3b38;
+    background-size: cover;
+    background-position: center;
     color: #fdfcfb;
     border-radius: 0 0 28px 28px;
 }
@@ -57,8 +59,6 @@
     border-radius: 10px;
     box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.25);
 }
-
-.hero-photo { margin-bottom: 22px; }
 
 .hero-actions {
     display: flex;
@@ -116,8 +116,22 @@
     line-height: 1.45;
 }
 
-.stock-card strong { font-weight: 600; }
-.stock-detail { color: var(--ds-ink-2); font-size: 13px; }
+.stock-card strong { font-weight: 600; display: block; }
+.stock-detail { color: var(--ds-ink-2); font-size: 13px; display: block; }
+
+.stock-card--brand {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.stock-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
 
 .stock-dot {
     width: 14px;

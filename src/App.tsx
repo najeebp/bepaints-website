@@ -1,7 +1,10 @@
 import React from 'react';
 import { Callout, Closing, Facts, FileCard, Route, Routes } from '@instinct/files';
+import heroBanner from './photos/hero-banner.jpg';
+import brandAp from './photos/brand-ap.jpg';
+import brandJsw from './photos/brand-jsw.jpg';
 
-const whatsapp = 'https://wa.me/919895810022';
+const whatsapp = 'https://wa.me/919746334755';
 
 function PhotoSlot({ label, dark }: { label: string; dark?: boolean }) {
     return <div className={dark ? 'photo-slot photo-slot--dark' : 'photo-slot'}>
@@ -11,8 +14,8 @@ function PhotoSlot({ label, dark }: { label: string; dark?: boolean }) {
 }
 
 const stock = [
-    { dot: '#e36d42', name: 'Asian Paints', detail: 'Interior and exterior emulsions, enamels, primers and distempers' },
-    { dot: '#c0392b', name: 'JSW Paints', detail: 'Emulsions, enamels and wood finishes' },
+    { img: brandAp, dot: '#e36d42', name: 'Asian Paints', detail: 'Interior and exterior emulsions, enamels, primers and distempers' },
+    { img: brandJsw, dot: '#c0392b', name: 'JSW Paints', detail: 'Emulsions, enamels and wood finishes' },
     { dot: '#d8b76a', name: 'Painting supplies', detail: 'Brushes, rollers, thinners, wall putty, sandpaper and masking tape' },
     { dot: '#73a89a', name: 'Colour mixing', detail: 'Shade-card advice and colour mixing in the shop' },
 ];
@@ -24,11 +27,11 @@ const branches = [
         accent: '#0f766e',
         facts: [
             { label: 'Address', value: 'Opposite Lifecare Hospital, Edavannappara, Kerala 673640' },
-            { label: 'Phone', value: '+91 79072 64393' },
+            { label: 'Phone', value: '+91 97463 34755' },
             { label: 'Mon-Sat', value: '7 am - 8 pm' },
             { label: 'Sunday', value: '7 am - 12 noon' },
         ],
-        tel: 'tel:+917907264393',
+        tel: 'tel:+919746334755',
         maps: 'https://www.google.com/maps/search/?api=1&query=B+E+Paints+%28Traders%29&query_place_id=ChIJx2ZgeTpEpjsRHK60sS8v54Q',
         slots: ['Storefront, Edavannappara', 'Inside the shop, Edavannappara'],
     },
@@ -50,12 +53,12 @@ const branches = [
         tag: 'Branch',
         accent: '#1d4e89',
         facts: [
-            { label: 'Address', value: 'Akode Road, Oorkadavu, Kerala 673640' },
-            { label: 'Phone', value: '+91 97463 34755' },
+            { label: 'Address', value: 'Kondotty Road, Oorkadavu, Kerala 673640' },
+            { label: 'Phone', value: '+91 95674 77830' },
             { label: 'Mon-Sat', value: '7 am - 8 pm' },
             { label: 'Sunday', value: '7 am - 11:30 am' },
         ],
-        tel: 'tel:+919746334755',
+        tel: 'tel:+919567477830',
         maps: 'https://www.google.com/maps/search/?api=1&query=11.243980%2C75.925607',
         slots: ['Storefront, Oorkadavu', 'Inside the shop, Oorkadavu'],
     },
@@ -63,17 +66,16 @@ const branches = [
 
 function Home() {
     return <>
-        <header className="hero">
+        <header className="hero" style={{ backgroundImage: `linear-gradient(160deg, rgb(9 45 42 / 0.86) 0%, rgb(13 58 54 / 0.80) 55%, rgb(18 55 88 / 0.88) 100%), url(${heroBanner})` }}>
             <p className="hero-eyebrow">Paints and supplies - Kondotty, Kerala</p>
             <h1 className="hero-title">B E Paints</h1>
             <p className="hero-tag">Paints and painting supplies from Asian Paints and JSW Paints, at three shops in and around Kondotty. Call or WhatsApp to check stock and today's prices.</p>
             <div className="swatches" aria-hidden="true">
                 {['#e36d42', '#d8b76a', '#73a89a', '#5c76ad', '#c95f5b'].map((c) => <span key={c} className="swatch" style={{ background: c }} />)}
             </div>
-            <div className="hero-photo"><PhotoSlot dark label="Storefront photo - B E Paints" /></div>
             <div className="hero-actions">
                 <a className="pill pill--whatsapp" href={whatsapp} target="_blank" rel="noreferrer">WhatsApp us</a>
-                <a className="pill pill--light" href="tel:+917907264393">Call the main shop</a>
+                <a className="pill pill--light" href="tel:+919746334755">Call the main shop</a>
             </div>
         </header>
 
@@ -81,10 +83,14 @@ function Home() {
             <h2 className="section-title">What we stock</h2>
             <div className="stock-grid">
                 {stock.map((item) => (
-                    <div key={item.name} className="stock-card">
-                        <span className="stock-dot" style={{ background: item.dot }} />
-                        <strong>{item.name}</strong>
-                        <span className="stock-detail">{item.detail}</span>
+                    <div key={item.name} className={item.img ? 'stock-card stock-card--brand' : 'stock-card'}>
+                        {item.img
+                            ? <img src={item.img} alt={`Paint can artwork for the ${item.name} shelf`} className="stock-img" />
+                            : <span className="stock-dot" style={{ background: item.dot }} />}
+                        <div>
+                            <strong>{item.name}</strong>
+                            <span className="stock-detail">{item.detail}</span>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -113,7 +119,7 @@ function Home() {
         <section className="contact">
             <p className="contact-eyebrow">Talk to us</p>
             <h2 className="contact-title">Call or WhatsApp</h2>
-            <p className="contact-line">WhatsApp: +91 98958 10022 (Najeeb, owner)</p>
+            <p className="contact-line">Call or WhatsApp: +91 97463 34755</p>
             <p className="contact-line contact-line--dim">bepaints.com - coming soon</p>
             <a className="pill pill--whatsapp" href={whatsapp} target="_blank" rel="noreferrer">Message on WhatsApp</a>
         </section>

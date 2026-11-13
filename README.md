@@ -22,4 +22,4 @@ the shop photos arrive.
 
 1. Edavannappara (main) - opposite Lifecare Hospital, Kerala 673640
 2. Puthiyedathparamb - Olavattur, Kerala 673637 (pin: 11.213902, 75.936317)
-3. Oorkadavu - Akode Road, Kerala 673640 (pin: 11.243980, 75.925607)
+3. Oorkadavu - Kondotty Road, Kerala 673640 (pin: 11.243980, 75.925607)
