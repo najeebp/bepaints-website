@@ -12,7 +12,7 @@ function PhotoSlot({ label, dark }: { label: string; dark?: boolean }) {
 
 const stock = [
     { dot: '#e36d42', name: 'Asian Paints', detail: 'Interior and exterior emulsions, enamels, primers and distempers' },
-    { dot: '#5c76ad', name: 'Nippon Paint', detail: 'Emulsions, enamels and wood finishes' },
+    { dot: '#c0392b', name: 'JSW Paints', detail: 'Emulsions, enamels and wood finishes' },
     { dot: '#d8b76a', name: 'Painting supplies', detail: 'Brushes, rollers, thinners, wall putty, sandpaper and masking tape' },
     { dot: '#73a89a', name: 'Colour mixing', detail: 'Shade-card advice and colour mixing in the shop' },
 ];
@@ -66,7 +66,7 @@ function Home() {
         <header className="hero">
             <p className="hero-eyebrow">Paints and supplies - Kondotty, Kerala</p>
             <h1 className="hero-title">B E Paints</h1>
-            <p className="hero-tag">Paints and painting supplies from Asian Paints and Nippon Paint, at three shops in and around Kondotty. Call or WhatsApp to check stock and today's prices.</p>
+            <p className="hero-tag">Paints and painting supplies from Asian Paints and JSW Paints, at three shops in and around Kondotty. Call or WhatsApp to check stock and today's prices.</p>
             <div className="swatches" aria-hidden="true">
                 {['#e36d42', '#d8b76a', '#73a89a', '#5c76ad', '#c95f5b'].map((c) => <span key={c} className="swatch" style={{ background: c }} />)}
             </div>
