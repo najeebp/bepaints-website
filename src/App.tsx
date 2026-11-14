@@ -4,6 +4,10 @@ import heroBanner from './photos/hero-banner.jpg';
 import brandAp from './photos/brand-ap.jpg';
 import brandJsw from './photos/brand-jsw.jpg';
 import puPalette from './photos/pu-palette.jpg';
+import oorkadavuFront from './photos/oorkadavu-storefront.jpg';
+import oorkadavuInside from './photos/oorkadavu-inside.jpg';
+import edavannapparaFront from './photos/edavannappara-storefront.jpg';
+import edavannapparaInside from './photos/edavannappara-inside.jpg';
 
 const whatsapp = 'https://wa.me/919746334755';
 
@@ -35,6 +39,10 @@ const branches = [
         tel: 'tel:+919746334755',
         maps: 'https://www.google.com/maps/search/?api=1&query=B+E+Paints+%28Traders%29&query_place_id=ChIJx2ZgeTpEpjsRHK60sS8v54Q',
         slots: ['Storefront, Edavannappara', 'Inside the shop, Edavannappara'],
+        photos: [
+            { src: edavannapparaFront, alt: 'B E Paints storefront at Edavannappara, sign above a display of Asian Paints buckets' },
+            { src: edavannapparaInside, alt: 'JSW Paints display wall with colour tins inside the Edavannappara shop' },
+        ],
     },
     {
         name: 'Puthiyedathparamb',
@@ -48,6 +56,7 @@ const branches = [
         tel: 'tel:+919746334755',
         maps: 'https://www.google.com/maps/search/?api=1&query=11.213902%2C75.936317',
         slots: ['Storefront, Puthiyedathparamb', 'Inside the shop, Puthiyedathparamb'],
+        photos: null,
     },
     {
         name: 'Oorkadavu',
@@ -62,6 +71,10 @@ const branches = [
         tel: 'tel:+919567477830',
         maps: 'https://www.google.com/maps/search/?api=1&query=11.243980%2C75.925607',
         slots: ['Storefront, Oorkadavu', 'Inside the shop, Oorkadavu'],
+        photos: [
+            { src: oorkadavuFront, alt: 'B E Traders storefront at Oorkadavu, lit up in the evening' },
+            { src: oorkadavuInside, alt: 'Shelves fully stocked with paint inside the Oorkadavu shop' },
+        ],
     },
 ];
 
@@ -115,7 +128,9 @@ function Home() {
                     <span className="branch-chip">{branch.tag}</span>
                     <h3 className="branch-name">{branch.name}</h3>
                     <div className="photo-slot-row">
-                        {branch.slots.map((slot) => <PhotoSlot key={slot} label={slot} />)}
+                        {branch.photos
+                            ? branch.photos.map((photo) => <img key={photo.alt} src={photo.src} alt={photo.alt} className="photo" />)
+                            : branch.slots.map((slot) => <PhotoSlot key={slot} label={slot} />)}
                     </div>
                     <Facts items={branch.facts} />
                     {branch.caveat && <Callout title="Before this goes live" tone="warning">{branch.caveat}</Callout>}
@@ -140,6 +155,6 @@ function Home() {
 export function App() {
     return <FileCard>
         <Routes><Route path="/" element={<Home />} /></Routes>
-        <Closing>Draft for review - addresses and hours from the live Google listings, checked 13 Nov 2026. Shop photos to be added.</Closing>
+        <Closing>Draft for review - addresses and hours from the live Google listings, checked 13 Nov 2026. Edavannappara and Oorkadavu photos are the shop's own; photos of Puthiyedathparamb to be added.</Closing>
     </FileCard>;
 }
