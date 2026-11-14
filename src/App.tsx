@@ -146,7 +146,7 @@ function Home() {
             <p className="contact-eyebrow">Talk to us</p>
             <h2 className="contact-title">Call or WhatsApp</h2>
             <p className="contact-line">Call or WhatsApp: +91 97463 34755</p>
-            <p className="contact-line contact-line--dim">bepaints.com - coming soon</p>
+            <p className="contact-line contact-line--dim">bepaints.com</p>
             <a className="pill pill--whatsapp" href={whatsapp} target="_blank" rel="noreferrer">Message on WhatsApp</a>
         </section>
     </>;
@@ -155,6 +155,6 @@ function Home() {
 export function App() {
     return <FileCard>
         <Routes><Route path="/" element={<Home />} /></Routes>
-        <Closing>Draft for review - addresses and hours from the live Google listings, checked 13 Nov 2026. Edavannappara and Oorkadavu photos are the shop's own; photos of Puthiyedathparamb to be added.</Closing>
+        <Closing>Addresses and hours from the shop's Google listings, checked 14 Nov 2026. Photos are the shop's own; photos of Puthiyedathparamb to be added.</Closing>
     </FileCard>;
 }
