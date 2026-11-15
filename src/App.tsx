@@ -8,6 +8,8 @@ import oorkadavuFront from './photos/oorkadavu-storefront.jpg';
 import oorkadavuInside from './photos/oorkadavu-inside.jpg';
 import edavannapparaFront from './photos/edavannappara-storefront.jpg';
 import edavannapparaInside from './photos/edavannappara-inside.jpg';
+import puthiyedathparambFront from './photos/puthiyedathparamb-storefront.jpg';
+import puthiyedathparambInside from './photos/puthiyedathparamb-inside.jpg';
 
 const whatsapp = 'https://wa.me/919746334755';
 
@@ -56,7 +58,10 @@ const branches = [
         tel: 'tel:+919746334755',
         maps: 'https://www.google.com/maps/search/?api=1&query=11.213902%2C75.936317',
         slots: ['Storefront, Puthiyedathparamb', 'Inside the shop, Puthiyedathparamb'],
-        photos: null,
+        photos: [
+            { src: puthiyedathparambFront, alt: 'B E Paints storefront at Puthiyedathparamb, Asian Paints and JSW Paints boards above the entrance' },
+            { src: puthiyedathparambInside, alt: 'Shelves stocked with JSW and Asian Paints tins beside the colour-mixing machine inside the Puthiyedathparamb shop' },
+        ],
     },
     {
         name: 'Oorkadavu',
@@ -155,6 +160,6 @@ function Home() {
 export function App() {
     return <FileCard>
         <Routes><Route path="/" element={<Home />} /></Routes>
-        <Closing>Addresses and hours from the shop's Google listings, checked 14 Nov 2026. Photos are the shop's own; photos of Puthiyedathparamb to be added.</Closing>
+        <Closing>Addresses and hours from the shop's Google listings, checked 14 Nov 2026. Photos are the shop's own.</Closing>
     </FileCard>;
 }
